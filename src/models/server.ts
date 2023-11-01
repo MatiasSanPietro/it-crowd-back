@@ -5,8 +5,6 @@ import routesProducts from "../routes/products";
 import { Product } from "./products";
 import { Brand } from "./brands";
 import { User } from "./user";
-import dotenv from "dotenv";
-dotenv.config();
 
 class Server {
   private app: Application;
