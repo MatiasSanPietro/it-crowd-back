@@ -34,18 +34,18 @@ class Server {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 yield connection_1.default.authenticate();
-                console.log("Conexión a la base de datos establecida.");
+                console.log("Connection to the database successful.");
                 yield connection_1.default.sync();
                 this.listen();
             }
             catch (error) {
-                console.error("No se puede conectar a la base de datos:", error);
+                console.error("Could not connect to the database:", error);
             }
         });
     }
     listen() {
         this.app.listen(this.port, () => {
-            console.log("Aplicación corriendo en el puerto " + this.port);
+            console.log("Running in port " + this.port);
         });
     }
     routes() {
