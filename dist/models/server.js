@@ -19,10 +19,12 @@ const products_1 = __importDefault(require("../routes/products"));
 const products_2 = require("./products");
 const brands_1 = require("./brands");
 const user_1 = require("./user");
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
-        this.port = process.env.DB_PORT || "3001"; //PORT
+        this.port = process.env.DB_PORT || "3001";
         this.listen();
         this.midlewares();
         this.routes();

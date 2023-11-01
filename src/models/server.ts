@@ -5,6 +5,8 @@ import routesProducts from "../routes/products";
 import { Product } from "./products";
 import { Brand } from "./brands";
 import { User } from "./user";
+import dotenv from "dotenv";
+dotenv.config();
 
 class Server {
   private app: Application;
@@ -12,7 +14,7 @@ class Server {
 
   constructor() {
     this.app = express();
-    this.port = process.env.DB_PORT || "3001"; //PORT
+    this.port = process.env.DB_PORT || "3001";
     this.listen();
     this.midlewares();
     this.routes();
