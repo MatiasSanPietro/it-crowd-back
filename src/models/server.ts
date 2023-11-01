@@ -2,10 +2,9 @@ import express, { Application } from "express";
 import cors from "cors";
 import routesProducts from "../routes/products";
 // import routesUser from "../routes/user";
-// import { Product } from "./products";
-// import { Brand } from "./brands";
-// import { User } from "./user";
-import sequelize from "../db/connection";
+import { Product } from "./products";
+import { Brand } from "./brands";
+import { User } from "./user";
 
 class Server {
   private app: Application;
@@ -14,29 +13,15 @@ class Server {
   constructor() {
     this.app = express();
     this.port = process.env.DB_PORT || "3001";
-    // this.listen();
+    this.listen();
     this.midlewares();
     this.routes();
-    // this.dbConnect();
-    this.init();
-  }
-
-  async init() {
-    try {
-      await sequelize.authenticate();
-      console.log("Conexión a la base de datos establecida.");
-
-      await sequelize.sync();
-
-      this.listen();
-    } catch (error) {
-      console.error("No se puede conectar a la base de datos:", error);
-    }
+    this.dbConnect();
   }
 
   listen() {
     this.app.listen(this.port, () => {
-      console.log("Aplicación corriendo en el puerto " + this.port);
+      console.log("Aplicacion corriendo en el puerto " + this.port);
     });
   }
 
@@ -48,6 +33,16 @@ class Server {
   midlewares() {
     this.app.use(express.json());
     this.app.use(cors());
+  }
+
+  async dbConnect() {
+    try {
+      await Brand.sync();
+      await Product.sync();
+      await User.sync();
+    } catch (error) {
+      console.error("Unable to connect to the database:", error);
+    }
   }
 }
 
