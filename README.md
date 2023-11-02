@@ -4,8 +4,11 @@ Features: all CRUD operations, sort by name or description, association between 
 
 Endpoints: 
 /api/products/ (getting all products or creating a new one)
+
 /api/products/:id (getting product by id, deleting product by id, updating product by id)
+
 /api/products/?name= (sorting products by name)
+
 /api/products/?description= (sorting products by description)
 
 Remote run (dev):
