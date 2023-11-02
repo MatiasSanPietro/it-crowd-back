@@ -2,7 +2,7 @@
 
 Features: all CRUD operations, sort by name or description, association between products and brand, (login/register to protect routes but didn't have time to implement it in the frontend).
 
-Endpoints: 
+Endpoints:
 /api/products/ (getting all products or creating a new one)
 
 /api/products/:id (getting product by id, deleting product by id, updating product by id)
@@ -14,6 +14,8 @@ Endpoints:
 Remote run (dev):
 
 modify .env to match your mysql configuration.
+
+modify db/connection so "remote run" is not commented and "deploy" is
 
 npm install
 
