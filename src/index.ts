@@ -7,7 +7,7 @@ import sequelize from "./db/connection";
 dotenv.config();
 
 const app: Application = express();
-const port: string = process.env.DB_PORT || "3001";
+const port: string = "3001";
 
 app.use(express.json());
 app.use(cors());

@@ -19,7 +19,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const connection_1 = __importDefault(require("./db/connection"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const port = process.env.DB_PORT || "3001";
+const port = "3001";
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 app.use("/api/products", products_1.default);
