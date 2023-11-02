@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const dbPort = process.env.DB_PORT || "3001";
+const dbPort = process.env.DB_PORT || "3306";
 
 const sequelize = new Sequelize({
   dialect: "mysql",

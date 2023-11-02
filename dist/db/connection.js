@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-const dbPort = process.env.DB_PORT || "3001";
+const dbPort = process.env.DB_PORT || "3306";
 const sequelize = new sequelize_1.Sequelize({
     dialect: "mysql",
     host: process.env.DB_HOST || "localhost",
