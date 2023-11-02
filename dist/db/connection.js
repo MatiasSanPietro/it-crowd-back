@@ -11,7 +11,7 @@ const dbPort = process.env.DB_PORT || "3306";
 const sequelize = new sequelize_1.Sequelize({
     dialect: "mysql",
     host: process.env.DB_HOST || "localhost",
-    port: parseInt(dbPort),
+    port: 11886,
     username: process.env.DB_USERNAME || "root",
     password: process.env.DB_PASSWORD || "root123",
     database: process.env.DATABASE || "itcrowd",
